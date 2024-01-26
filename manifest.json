@@ -1,0 +1,8 @@
+{
+  "name": "Lissajous Curves",
+  "id": "1232402036106953267",
+  "api": "1.0.0",
+  "main": "build/code.js",
+  "ui": "ui.html",
+  "editorType": ["figma"]
+}

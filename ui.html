@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      padding: 0px;
+      display: flex;
+      margin: 0;
+      font-size: 12px;
+            display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .schnarf {
+
+    }
+
+    h3 {
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    label {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;'
+      font-size: 12px !important;
+    }
+
+    input {
+      width: 70%;
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 20px;
+      background-color: #0056b3;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #000;
+    }
+  </style>
+</head>
+<body>
+  <div class="schnarf">
+    <label>a: <input type="number" id="a" value="3"></label>
+    <label>b: <input type="number" id="b" value="4"></label>
+    <label>delta: <input type="number" id="delta" value="1.57"></label>
+    <label>numPoints: <input type="number" id="numPoints" value="1000"></label>
+    <label>scale: <input type="number" id="scale" value="100"></label>
+    <button onclick="draw()">Draw</button>
+  </div>
+  <script>
+    function draw() {
+      const a = parseFloat(document.getElementById('a').value);
+      const b = parseFloat(document.getElementById('b').value);
+      const delta = parseFloat(document.getElementById('delta').value);
+      const numPoints = parseInt(document.getElementById('numPoints').value);
+      const scale = parseFloat(document.getElementById('scale').value);
+      parent.postMessage({ pluginMessage: { type: 'draw-lissajous', a, b, delta, numPoints, scale } }, '*');
+    }
+  </script>
+</body>
+</html>
